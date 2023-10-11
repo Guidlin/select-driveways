@@ -135,7 +135,7 @@ header img {
     color: white;
 }
 
-#maintitletext *[:not(.button)] {
+#maintitletext *:not(.button) {
     padding: 0 20px;
 }
 
