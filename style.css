@@ -37,14 +37,14 @@ header img {
     padding-left: 5px;
 }
 
-nav {
+#desktop-nav {
     display: inline-flex;
     align-items: center;
     
-    margin-left: 10px;
+    margin-left: 20px;
 }
 
-nav a {
+#desktop-nav a {
     color: #001C47;
     font-size: 24px;
     font-weight: bold;
@@ -53,8 +53,62 @@ nav a {
     padding: 0 10px;
 }
 
-nav a:hover {
+#desktop-nav a:hover {
     color:#626e81;
+}
+
+#mobile-container {
+    display: none;
+}
+
+@media (max-width: 800px) {
+    #desktop-nav {
+        display: none;
+    }
+
+    #mobile-container {
+        display: inline-flex;
+        align-items: center;
+        justify-content: right;
+
+        width: 100%;
+    }
+
+    #hamburger {
+        height: 54px;
+        aspect-ratio: 1 / 1;
+
+        margin-right: 10px;
+    }
+
+    #hamburger img:hover {
+        stroke: #5d6d86;
+    }
+
+    #mobile-nav {
+        display: none;
+
+        position: absolute;
+        top: 64px;
+
+        z-index: 1;
+
+        width: 100%;
+    }
+
+    #mobile-nav a {
+        padding: 10px;
+        background-color: white;
+
+        display: block;
+
+        text-decoration: none;
+        color: #001C47;
+    }
+
+    #mobile-nav a:hover {
+        color: #5d6d86;
+    }
 }
 
 #maintitle {
@@ -81,6 +135,10 @@ nav a:hover {
     color: white;
 }
 
+#maintitletext *[:not(.button)] {
+    padding: 0 20px;
+}
+
 #maintitletext h2 {
     font-size: 3rem;
     color: white;
@@ -95,20 +153,51 @@ nav a:hover {
 .button {
     text-decoration: none;
     padding: 10px;
-    background-color: white;
-    color: #001C47;
     font-size: 1.5rem;
     border-radius: 10px;
+
+    background-color: #001C47;
+    color: white;
+}
+
+.button.secondary {
+    background-color: white;
+    color: #001C47;
 }
 
 .button:hover {
-    color: #4d6386;
+    color: #5d6d86;
 }
 
 section {
     width: 1000px;
     margin: auto;
     padding-bottom: 30px;
+}
+
+@media (max-width: 1100px) {
+    section {
+        width: 75%;
+    }
+}
+
+@media (max-width: 1000px) {
+    section {
+        padding-bottom: 20px;
+    }
+
+    .split {
+        flex-direction: column;
+    }
+
+    .split img {
+        width: 100%;
+        aspect-ratio: 1 / 1;
+    }
+
+    .split div {
+        margin-top: 10px;
+    }
 }
 
 .split {
@@ -133,4 +222,13 @@ section img {
     text-align: center;
     margin-left: auto;
     margin-right: auto;
+
+    aspect-ratio: 1 /1;
+}
+
+section .button {
+    display: block;
+    margin: auto;
+
+    width: fit-content;
 }
